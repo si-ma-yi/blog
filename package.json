@@ -4,11 +4,11 @@
   "private": false,
   "type": "module",
   "author": {
-    "name": "Elian Van Cutsem",
-    "email": "hello@elian.codes",
-    "url": "https://www.elian.codes/"
+    "name": "si ma yi",
+    "email": "dev.hong.89@gmail.com",
+    "url": "https://github.com/si-ma-yi/blog"
   },
-  "homepage": "https://brutal.elian.codes",
+  "homepage": "https://github.com/si-ma-yi/blog",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
