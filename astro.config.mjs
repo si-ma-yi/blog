@@ -6,7 +6,7 @@ export default defineConfig({
   // used to generate images
   site:
     process.env.VERCEL_ENV === 'production'
-      ? 'https://github.com/si-ma-yi/blog'
+      ? 'https://github.com/si-ma-yi'
       : process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}/`
       : 'https://localhost:3001/',
