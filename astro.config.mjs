@@ -10,7 +10,7 @@ export default defineConfig({
       : process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}/`
       : 'https://localhost:3001/',
-  base: process.env.VERCEL_ENV === 'production' ? '/blog' : '',
+  base: process.env.VERCEL_ENV === 'production' ? '../' : '',
   trailingSlash: 'ignore',
   integrations: [sitemap(), UnoCSS({ injectReset: true })],
   output: 'static',
