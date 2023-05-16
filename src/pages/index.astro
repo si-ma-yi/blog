@@ -1,11 +1,11 @@
 ---
-import Layout from '@layouts/Default.astro';
-import RecentBlogPosts from '@components/generic/RecentBlogPosts.astro';
-import MobileSocials from '@components/home/MobileSocials.astro';
-import { Pill } from '@eliancodes/brutal-ui';
-import { Button } from '@eliancodes/brutal-ui';
-import { Card } from '@eliancodes/brutal-ui';
-import { getCollection } from 'astro:content';
+import Layout from "@layouts/Default.astro";
+import RecentBlogPosts from "@components/generic/RecentBlogPosts.astro";
+import MobileSocials from "@components/home/MobileSocials.astro";
+import { Pill } from "@eliancodes/brutal-ui";
+import { Button } from "@eliancodes/brutal-ui";
+import { Card } from "@eliancodes/brutal-ui";
+import { getCollection } from "astro:content";
 
 // const builtWith = [
 //   { name: 'Astro', url: 'https://astro.build/' },
@@ -23,61 +23,66 @@ import { getCollection } from 'astro:content';
 //   { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
 // ];
 
-const posts = await getCollection('blog').then((collection) =>
+const posts = await getCollection("blog").then((collection) =>
   collection.reverse()
 );
 
-
 const tags = posts.reduce((acc, curr) => {
-  curr.data.tags.forEach((s: string) => acc.add(s))
+  curr.data.tags.forEach((s: string) => acc.add(s));
   return acc;
 }, new Set()) as Set<string>;
 
-console.log("TAGS : ", tags)
+console.log("TAGS : ", tags);
 ---
 
 <Layout
-  title='Home'
-  pageTitle='Brutal Theme | Home'
-  description='Brutal is a minimalistic, neobrutalism theme for Astro.'
+  title="Home"
+  pageTitle="Brutal Theme | Home"
+  description="Brutal is a minimalistic, neobrutalism theme for Astro."
 >
-  <main class='bg-pink p-6'>
+  <main class="bg-pink p-6">
     <!-- <MobileSocials /> -->
-    <section id='about' class='grid md:grid-cols-8 gap-8 mt-4'>
-        <!--<h2 class='hidden'>About Brutal</h2>
-     <div class='col-span-4'>
+    <section id="about" class="grid md:grid-cols-8 gap-8 mt-4">
+      <h2 class="hidden">About Brutal</h2>
+      <!-- <div class="col-span-4">
         <Card>
-          <div class='flex flex-col justify-between items-start gap-4'>
-            <p class='mt-4 outfit text-2xl md:text-5xl lg:text-6xl'>
+          <div class="flex flex-col justify-between items-start gap-4">
+            <p class="mt-4 outfit text-2xl md:text-5xl lg:text-6xl">
               ようこそ！
-              <a
-                class='text-white'
-                target='_blank'
-                href='https://astro.build/'>Welcome!</a
+              <a class="text-white" target="_blank" href="https://astro.build/"
+                >Welcome!</a
               >
             </p>
-            <p class='mt-2 outfit text-xl md:text-3xl lg:text-5xl'>
-                ご訪問してありがとうございます。
+            <p class="mt-2 outfit text-xl md:text-3xl lg:text-5xl">
+              ご訪問してありがとうございます。
             </p>
-            <Button target={'_self'} href='/blog/'>
+            <Button target={"_self"} href="/blog/">
               Check out the blog &rarr;
             </Button>
           </div>
         </Card>
       </div> -->
-      <div class='col-span-8'>
+      <div class="col-span-8">
         <Card>
-          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-8 dm-serif'>
-            Tags
+          <h2 class="text-2xl md:text-4xl lg:text-6xl mb-4 dm-serif">
+            기록하기 위해 만든 공간
           </h2>
-          <ul class='flex gap-4 flex-wrap'>
+          <p class="poppins">
+            요즘은 뭐든지 금새 까먹어버려서 기록해 두기 위해 만들었습니다.
+          </p>
+        </Card>
+      </div>
+      <div class="col-span-8">
+        <Card>
+          <h2 class="text-2xl md:text-4xl lg:text-6xl mb-8 dm-serif">Tags</h2>
+          <ul class="flex gap-4 flex-wrap">
             {
               Array.from(tags).map((tag: string) => (
                 <li>
                   <Pill>
                     <a
-                      class='sanchez'
-                      target='_blank'
+                      class="sanchez"
+                      target="_blank"
                       href={`/blog/tags/${tag.toLowerCase()}/`}
                       title={`Go to ${tag}`}
                     >
@@ -90,19 +95,6 @@ console.log("TAGS : ", tags)
           </ul>
         </Card>
       </div>
-      <!-- <div class='col-span-2'>
-        <Card>
-          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-4 dm-serif'>
-            What is Brutal?
-          </h2>
-          <p class='poppins'>
-            Brutal is a theme built with Astro, UnoCSS by <a
-              href='https://www.elian.codes/'>Elian</a
-            >. It's a simple, fast, and modern theme that is easy to use and
-            customize. Mainly meant to power blogs and personal websites.
-          </p>
-        </Card>
-      </div> -->
     </section>
     <RecentBlogPosts />
   </main>
