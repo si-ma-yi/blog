@@ -8,12 +8,15 @@ export async function get(context) {
     description: "匿名 블로그",
     stylesheet: false,
     site: context.site,
-    items: blog.map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.pubDate,
-      description: post.data.description,
-      link: `/blog/${post.slug}/`,
-    })),
+    items: blog.map((post) => {
+      console.log(post);
+      return {
+        title: post.data.title,
+        pubDate: post.data.pubDate,
+        description: post.data.description,
+        link: `/blog/${post.slug}/`,
+      };
+    }),
     customData: "<language>ko-kp</language>",
     // canonicalUrl: "https://brutal.elian.codes",
   });
