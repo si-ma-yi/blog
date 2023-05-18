@@ -7,7 +7,7 @@ export default defineConfig({
 
   site:
     process.env.VERCEL_ENV === "production"
-      ? "https://si-ma-yi.github.io/blog"
+      ? "https://si-ma-yi.github.io"
       : process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}/`
       : "https://localhost:3001/",
