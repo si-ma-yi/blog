@@ -4,7 +4,7 @@ pubDate: 2023-5-18
 author: 匿名
 tags:
   - 독후감
-imgUrl: /images/post-1/summary.jpg
+imgUrl: /images/도덕경독후감/노자.jpg
 description: 노자의 도덕경을 읽고 쓰는 독후감
 layout: "../../layouts/BlogPost.astro"
 ---
