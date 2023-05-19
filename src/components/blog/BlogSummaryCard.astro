@@ -14,7 +14,7 @@ const { post } = Astro.props;
 <SummaryCard
   title={post.data.title}
   imgAlt={post.data.title}
-  imgSrc={Astro.site?.href + "/" + post.data.imgUrl}
+  imgSrc={Astro.site?.href + post.data.imgUrl}
   description={post.data.description}
 >
   <div class="flex justify-end my-4">
