@@ -7,7 +7,7 @@ export default defineConfig({
 
   site:
     process.env.npm_lifecycle_script === "astro build"
-      ? "https://si-ma-yi.github.io"
+      ? "https://si-ma-yi.github.io/blog"
       : "http://127.0.0.1:3000",
   base: process.env.npm_lifecycle_script === "astro build" ? "/blog" : "",
 
