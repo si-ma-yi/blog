@@ -14,6 +14,7 @@ export default defineConfig({
   trailingSlash: "ignore",
   integrations: [sitemap(), UnoCSS({ injectReset: true })],
   build: {
+    build: "file",
     assets: "_astro",
     assetsPrefix: "https://si-ma-yi.github.io/blog",
   },
