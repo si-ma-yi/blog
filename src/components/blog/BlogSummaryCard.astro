@@ -18,7 +18,7 @@ const { post } = Astro.props;
   description={post.data.description}
 >
   <div class="flex justify-end my-4">
-    <Button href={`${Astro.site?.origin}/blog/${post.slug}/`}>
+    <Button href={`${Astro.site?.href}/blog/${post.slug}/`}>
       Read post &rarr;
     </Button>
   </div>
@@ -33,7 +33,7 @@ const { post } = Astro.props;
               <li>
                 <a
                   class="sanchez"
-                  href={`${Astro.site?.origin}/blog/tags/${tag.toLowerCase()}/`}
+                  href={`${Astro.site?.href}/blog/tags/${tag.toLowerCase()}/`}
                 >
                   <Pill>{tag}</Pill>
                 </a>
