@@ -15,6 +15,6 @@ export default defineConfig({
   integrations: [sitemap(), UnoCSS({ injectReset: true })],
   build: {
     assets: "_astro",
-    assetsPrefix: "https://si-ma-yi.github.io/blog/",
+    // assetsPrefix: "https://si-ma-yi.github.io/blog",
   },
 });
