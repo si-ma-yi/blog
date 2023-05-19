@@ -83,7 +83,9 @@ console.log("TAGS : ", tags);
                     <a
                       class="sanchez"
                       target="_blank"
-                      href={`/blog/tags/${tag.toLowerCase()}/`}
+                      href={`${
+                        Astro.site?.origin
+                      }/blog/tags/${tag.toLowerCase()}/`}
                       title={`Go to ${tag}`}
                     >
                       {tag}
