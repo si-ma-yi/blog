@@ -9,7 +9,6 @@ export async function get(context) {
     stylesheet: false,
     site: context.site,
     items: blog.map((post) => {
-      console.log(post);
       return {
         title: post.data.title,
         pubDate: post.data.pubDate,
