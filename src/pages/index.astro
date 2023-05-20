@@ -24,7 +24,7 @@ import { getCollection } from "astro:content";
 // ];
 
 const posts = await getCollection("blog").then((collection) =>
-  collection.reverse()
+  collection.sort((d1: any, d2: any) => d2.data.pubDate - d1.data.pubDate)
 );
 
 const tags = posts.reduce((acc, curr) => {

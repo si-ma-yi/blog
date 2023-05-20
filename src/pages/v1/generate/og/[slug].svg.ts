@@ -15,7 +15,7 @@ const width = 1200;
 const posts = await getCollection('blog');
 
 export function getStaticPaths() {
-  return posts.map((post) => ({
+  return posts.sort((d1: any, d2: any) => d2.data.pubDate - d1.data.pubDate).map((post) => ({
     params: { slug: post.slug },
     props: { title: post.data.title },
   }));

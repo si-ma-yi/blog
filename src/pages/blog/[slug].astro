@@ -4,7 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
-  return blogEntries.map((blogpost) => ({
+  return blogEntries.sort((d1: any, d2: any) => d2.data.pubDate - d1.data.pubDate).map((blogpost) => ({
     params: { slug: blogpost.slug },
     props: { blogpost },
   }));

@@ -8,7 +8,7 @@ export async function get(context) {
     description: "匿名 블로그",
     stylesheet: false,
     site: context.site,
-    items: blog.map((post) => {
+    items: blog.sort((d1, d2) => d2.data.pubDate - d1.data.pubDate).map((post) => {
       return {
         title: post.data.title,
         pubDate: post.data.pubDate,

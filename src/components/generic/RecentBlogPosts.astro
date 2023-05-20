@@ -11,7 +11,7 @@ interface Props {
 const { count } = Astro.props;
 
 const posts = await getCollection("blog").then((posts) =>
-  posts.slice(0, count ?? 3)
+  posts.sort((d1: any, d2: any) => d2.data.pubDate - d1.data.pubDate).slice(0, count ?? 3)
 );
 ---
 
