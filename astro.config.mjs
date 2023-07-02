@@ -8,8 +8,8 @@ export default defineConfig({
   site:
     process.env.npm_lifecycle_script === "astro build"
       ? "https://si-ma-yi.github.io/blog"
-      : "http://localhost:3002/blog",
-  base: process.env.npm_lifecycle_script === "astro build" ? "/blog" : "/blog",
+      : "http://localhost:3000/blog",
+  base: "/blog",
 
   trailingSlash: "ignore",
   integrations: [sitemap(), UnoCSS({ injectReset: true })],
