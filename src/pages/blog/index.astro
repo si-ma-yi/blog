@@ -12,8 +12,9 @@ const posts = await getCollection("blog").then((collection) =>
   title="Blog"
   description="Brutal Blog | On this page you can find a collection of blogposts"
   pageTitle="Brutal Blog"
+  classList="h-screen"
 >
-  <main class="bg-green p-6 h-screen">
+  <main class="bg-green p-6 overflow-y-auto">
     <BlogList posts={posts} />
   </main>
 </Layout>
