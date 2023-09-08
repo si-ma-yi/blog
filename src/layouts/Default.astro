@@ -16,7 +16,10 @@ const { title, description, classList, pageTitle, ogImage } = Astro.props;
 
 <html lang="en" class="h-full">
   <BaseHead ogImage={ogImage} title={title} description={description} />
-
+  <meta
+    name="google-site-verification"
+    content="W1egtT4vI4feVw3LrDKeVzNl1seWbO1shdw4uNzav30"
+  />
   <body class:list={[classList]}>
     <BaseNavigation pageTitle={pageTitle} />
     <slot />
